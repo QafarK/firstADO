@@ -1,0 +1,104 @@
+﻿<Window x:Class="firstADO.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:firstADO"
+        xmlns:w="clr-namespace:firstADO.Models"
+    MinWidth="400"
+    MinHeight="600"
+    MaxWidth="600"
+    MaxHeight="600"
+    MouseMove="Window_MouseMove"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        >
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+
+
+            <TextBlock
+                Margin="0,25,0,0"
+                HorizontalAlignment="Center"
+                FontSize="40"
+                FontWeight="SemiBold"
+                Foreground="DarkBlue">
+                Welcome !
+            </TextBlock>
+            <Label
+                x:Name="usernameLabel"
+                Margin="0,40,0,0"
+                HorizontalAlignment="Center"
+                FontSize="25"
+                FontWeight="DemiBold"
+                Foreground="#FF673AB7">
+                username
+            </Label>
+            <TextBox
+                x:Name="textBoxUsername"
+                Width="350"
+                Height="45"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Background="AliceBlue"
+                FontSize="20"
+                KeyDown="textBoxUsername_KeyDown"
+                Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" />
+
+
+            <Label
+                x:Name="passwordLabel"
+                Margin="0,10,0,0"
+                HorizontalAlignment="Center"
+                FontSize="25"
+                FontWeight="DemiBold"
+                Foreground="#FF673AB7">
+                password
+            </Label>
+            <PasswordBox
+                x:Name="textBoxPassword"
+                Width="350"
+                Height="45"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                w:PasswordHelper.Attach="True"
+                w:PasswordHelper.Password="{Binding Password, Mode=TwoWay}"
+                Background="AliceBlue"
+                FontSize="20"
+                KeyDown="textBoxPassword_KeyDown" />
+            <Button
+                Height="45"
+                Margin="0,40,0,0"
+                VerticalContentAlignment="Center"
+                Command="{Binding LoginCommand}"
+                FontSize="15">
+                Log in
+            </Button>
+            <TextBlock
+                Height="30"
+                Margin="7,0,0,0"
+                FontSize="15"
+                Foreground="Red"
+                Text="{Binding ErrorLogin}" />
+
+            <TextBlock
+                Margin="0,12,0,5"
+                HorizontalAlignment="Center"
+                FontSize="16"
+                FontWeight="SemiBold">
+                or
+            </TextBlock>
+
+            <Button
+                x:Name="signUp"
+                Height="45"
+                Margin="0,20,0,0"
+                VerticalContentAlignment="Center"
+                Command="{Binding SignUpCommand}"
+                FontSize="15">
+                Sign up
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</Window>
