@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using firstADO.ViewModels;
+using firstADO.Views;
 using SimpleInjector;
 namespace firstADO
 {
@@ -15,6 +16,9 @@ namespace firstADO
         {
             Container.RegisterSingleton<MainWindow>();
             Container.RegisterSingleton<MainViewModel>();
+
+            Container.RegisterSingleton<SignUpWindow>();
+            Container.RegisterSingleton<SignUpViewModel>();
         }
 
         protected override void OnStartup(StartupEventArgs e)

@@ -1,0 +1,141 @@
+﻿<Window
+    x:Class="firstADO.Views.SignUpWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:firstADO.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:w="clr-namespace:firstADO.Models"
+    Title="SignUpWindow"
+    Width="800"
+    Height="900"
+    mc:Ignorable="d">
+    <Grid>
+        <ScrollViewer>
+
+            <StackPanel>
+
+                <GroupBox
+                    Width="400"
+                    Margin="0,15,0,0"
+                    FontSize="15"
+                    FontWeight="SemiBold"
+                    Header="Name">
+                    <TextBox
+                        Background="AliceBlue"
+                        FontSize="18"
+                        Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                </GroupBox>
+                <Label
+                    Height="25"
+                    Margin="7,0,0,0"
+                    Content="{Binding ErrorName, UpdateSourceTrigger=PropertyChanged}"
+                    FontSize="13"
+                    Foreground="Red" />
+                <GroupBox
+                    Width="400"
+                    Margin="0,15,0,0"
+                    FontSize="15"
+                    FontWeight="SemiBold"
+                    Header="Surname">
+                    <TextBox
+                        Background="AliceBlue"
+                        FontSize="18"
+                        Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}" />
+                </GroupBox>
+                <Label
+                    Height="25"
+                    Margin="7,0,0,0"
+                    Content="{Binding ErrorSurname, UpdateSourceTrigger=PropertyChanged}"
+                    FontSize="13"
+                    Foreground="Red" />
+                <GroupBox
+                    Width="400"
+                    Margin="0,15,0,0"
+                    FontSize="15"
+                    FontWeight="SemiBold"
+                    Header="Age">
+                    <TextBox
+                        Background="AliceBlue"
+                        FontSize="18"
+                        Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" />
+                </GroupBox>
+                <Label
+                    Height="25"
+                    Margin="7,0,0,0"
+                    Content="{Binding ErrorAge, UpdateSourceTrigger=PropertyChanged}"
+                    FontSize="13"
+                    Foreground="Red" />
+                <GroupBox
+                    Width="400"
+                    Margin="0,15,0,0"
+                    FontSize="15"
+                    FontWeight="SemiBold"
+                    Header="Login">
+                    <TextBox
+                        Background="AliceBlue"
+                        FontSize="18"
+                        Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}" />
+                </GroupBox>
+                <Label
+                    Height="25"
+                    Margin="7,0,0,0"
+                    Content="{Binding ErrorLogin, UpdateSourceTrigger=PropertyChanged}"
+                    FontSize="13"
+                    Foreground="Red" />
+                <GroupBox
+                    Width="400"
+                    Margin="0,15,0,0"
+                    FontSize="15"
+                    FontWeight="SemiBold"
+                    Header="Password">
+                    <PasswordBox
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        w:PasswordHelper.Attach="True"
+                        w:PasswordHelper.Password="{Binding Password, Mode=TwoWay}"
+                        Background="AliceBlue"
+                        FontSize="18" />
+                </GroupBox>
+                <Label
+                    Height="25"
+                    Margin="7,0,0,0"
+                    Content="{Binding ErrorPassword, UpdateSourceTrigger=PropertyChanged}"
+                    FontSize="13"
+                    Foreground="Red" />
+
+                <GroupBox
+                    Width="400"
+                    Margin="0,15,0,0"
+                    FontSize="15"
+                    FontWeight="SemiBold"
+                    Header="Confirm Password">
+                    <PasswordBox
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        w:PasswordHelper.Attach="True"
+                        w:PasswordHelper.Password="{Binding ConfirmPassword, Mode=TwoWay}"
+                        Background="AliceBlue"
+                        FontSize="18" />
+                </GroupBox>
+                <Label
+                    Height="25"
+                    Margin="7,0,0,0"
+                    Content="{Binding ErrorConfirmPassword, UpdateSourceTrigger=PropertyChanged}"
+                    FontSize="13"
+                    Foreground="Red" />
+
+                <Button
+                    Width="200"
+                    Height="50"
+                    Margin="0,0,0,20"
+                    Command="{Binding SignUpCommand}">
+                    Sign Up
+                </Button>
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+    </Grid>
+</Window>
